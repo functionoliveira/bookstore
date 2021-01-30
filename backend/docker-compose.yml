@@ -6,6 +6,8 @@ services:
     container_name: bookstore-api
     command: /bin/sh -c "/app/start.sh"
     restart: unless-stopped
+    depends_on:
+      - bookstore-database
     ports:
       - "9000:80"
       - "5000:5000"
