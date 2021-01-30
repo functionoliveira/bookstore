@@ -8,7 +8,8 @@ Mini Aplicação que realiza CRUD de livros, consumidores e vendas.
 - dentro da pasta backend execute o comando <code>docker-compose build</code>.
 - após finalizar o build execute <code>docker-compose up</code>, utilize "-d" para realizar o processo em background.
 - execute <code>docker logs -f --tail=100 bookstore-api</code> para ver os logs da aplicação.
-
+- Caso você acesse a aplicação e um erro como o abaixo aparece pode ser que o serviço de banco de dados ainda está subindo, aguarde alguns segundos e acesse novamente.
+<img src="./evidence.png" alt="Evidência: falha do serviço de banco de dados."/>
 ## Rotas
 
 #### Books
