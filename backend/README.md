@@ -5,13 +5,13 @@ Mini Aplicação que realiza CRUD de livros, consumidores e vendas.
 - docker
 
 ## Como Rodar
-- dentro da pasta backend execute o comando <code>docker-compose build</code>.
-- após finalizar o build execute <code>docker-compose up</code>, utilize "-d" para realizar o processo em background.
-- execute <code>docker logs -f --tail=100 bookstore-api</code> para ver os logs da aplicação.
+- Dentro da pasta backend execute o comando <code>docker-compose build</code>.
+- Após finalizar o build execute <code>docker-compose up -d</code>.
+- Acesse o docker para rodar as migrations <code>docker exec -it bookstore-api bash</code>.
+- Na pasta "/app" execute o comando <code>python manage.py db upgrade</code>.
+- Execute <code>docker logs -f --tail=100 bookstore-api</code> caso queira ver os logs da aplicação.
 
-Observação 1: Aparecem alguns erros no console quando a aplicação está iniciando <code>"sqlalchemy.exc.OperationalError"</code>. Isso acontece porque o serviço do postgre ainda não foi inicializado, logo após ele ser inicializado o erro para de aparecer e o servidor da aplicação estará de up.
-
-Observação 2: Caso tenha algum tipo de problema com o banco de dados é possível deletar a pasta db-data e migrations.
+Observação: Caso tenha algum tipo de problema com o banco de dados é possível deletar a pasta db-data e migrations.
 - Após deletar rode o comando <code>docker-compose up -d</code>.
 - Acesse o docker através do comando docker exec -it bookstore-api bash.
 - Já dentro do docker na pasta app execute o comando <code>python manage.py db init</code>.
