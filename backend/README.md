@@ -10,6 +10,14 @@ Mini Aplicação que realiza CRUD de livros, consumidores e vendas.
 - execute <code>docker logs -f --tail=100 bookstore-api</code> para ver os logs da aplicação.
 - Caso você acesse a aplicação e um erro como o abaixo aparece pode ser que o serviço de banco de dados ainda está subindo, aguarde alguns segundos e acesse novamente.
 <img src="./evidence.png" alt="Evidência: falha do serviço de banco de dados."/>
+
+Observação: Caso tenha algum tipo de problema com o banco de dados é possível deletar a pasta db-data e migrations.
+- Após deletar rode o comando <code>docker-compose up -d</code>.
+- Acesse o docker através do comando docker exec -it bookstore-api bash.
+- Já dentro do docker na pasta app execute o comando <code>python manage.py db init</code>.
+- Logo após execute <code>python manage.py db migrate</code>
+- E por fim execute <code>python manage.py db upgrade</code>
+O banco de dados estará zerado com as migrations necessárias para a funcionalidade da aplicação. 
 ## Rotas
 
 #### Books
